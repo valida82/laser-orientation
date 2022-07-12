@@ -1,7 +1,6 @@
 ---
 title: "LASER Badge"
-subtitle: "LASER Institute Orientation"
-author: "YOUR NAME HERE"
+author: "Susan Hibbard"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output:
   html_document:
@@ -9,7 +8,11 @@ output:
     toc_depth: 4
     toc_float: yes
     code_folding: show
-    code_download: TRUE
+    code_download: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+subtitle: LASER Institute Orientation
 editor_options:
   markdown:
     wrap: 72
@@ -18,8 +21,6 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, error = TRUE)
 ```
-
-![](img/LASER_Hx.png){width="40%"}
 
 ## Introduction
 
@@ -378,7 +379,7 @@ the names of two variables to the code below for what is now simply XXX
 (a placeholder).
 
 ```{r}
-ggplot(d, aes(x = XXX, y = XXX)) +
+ggplot(d, aes(x = percentage_earned, y = Points_Possible)) +
   geom_point()
 ```
 

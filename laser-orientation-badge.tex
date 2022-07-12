@@ -1,0 +1,1015 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={LASER Badge},
+  pdfauthor={YOUR NAME HERE},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{LASER Badge}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{LASER Institute Orientation}
+\author{YOUR NAME HERE}
+\date{July 12, 2022}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{4}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
+
+Welcome to your first LASER badge! This LASER Orientation Badge is
+really a warm-up activitiy to introduce you to R Markdown and the coding
+case studies that we will be using in the machine learning, network
+analysis, and text mining labs. It is a chance to become familiar with
+how RStudio and R Markdown works.
+
+You may have used R before-or you may not have! Either is fine as this
+task will be designed with the assumption that you have not used R
+before. It includes ``reaches'' for anyone who may want to do a bit
+more.
+
+In the context of doing so, we'll focus on the following tasks:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Reading data into R (in the \textbf{Prepare} section)
+\item
+  Preparing and ``wrangling'' data in table (think spreadsheet!) format
+  (in the \textbf{Wrangle} section)
+\item
+  Creating some plots (in the \textbf{Explore} section)
+\item
+  Running a model - specifically, a regression model (in the
+  \textbf{Model} section)
+\item
+  Finally, creating a reproducible report of your work you can share
+  with others (in the \textbf{Communicate} section)
+\end{enumerate}
+
+\hypertarget{the-laser-cycle}{%
+\subsubsection{The LASER Cycle}\label{the-laser-cycle}}
+
+You may be wondering what these bolded terms above refer to; what's so
+special about preparing, wrangling, exploring, and modeling data - and
+communicating results? We're using these terms as a part of a framework,
+or model, for what we mean by doing learning in STEM education research.
+
+The particular framework we are using comes from the work of Krumm et
+al.'s
+\href{https://github.com/laser-institute/essential-readings/blob/main/laser-orientation/Learning\%20Analytics\%20Goes\%20to\%20School.pdf}{\emph{Learning
+Analytics Goes to School}}\emph{.} You can check that out, but don't
+feel any need to dive deep for now - we'll be spending more time on this
+in first day of the summer institute. For now, know that this document
+is organized around three of the five components of what we're referring
+to as the \textbf{LASER cycle}.
+
+Click the green arrow to the right of the ``code chunk'' below to view
+the image (more on that process of clicking the green arrow and what it
+does, too, in a moment)!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"img/laser{-}cycle.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{img/laser-cycle.png}
+
+\hypertarget{how-to-use-this-r-markdown-document}{%
+\subsubsection{How to use this R Markdown
+document}\label{how-to-use-this-r-markdown-document}}
+
+This is an R Markdown file as indicated by the .rmd extension at the end
+of the file name. R Markdown documents are fully reproducible and use a
+productive
+\href{https://bookdown.org/yihui/rmarkdown/notebook.html}{notebook
+interface} to combine narrative text and ``chunks'' of code to produce a
+range of formatted outputs including: formats
+including~\href{https://bookdown.org/yihui/rmarkdown/html-document.html}{HTML},~\href{https://bookdown.org/yihui/rmarkdown/pdf-document.html}{PDF},~\href{https://bookdown.org/yihui/rmarkdown/word-document.html}{MS
+Word},~\href{https://bookdown.org/yihui/rmarkdown/beamer-presentation.html}{Beamer},~\href{https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html}{HTML5
+slides},~\href{https://bookdown.org/yihui/rmarkdown/tufte-handouts.html}{Tufte-style
+handouts},~\href{https://bookdown.org/}{books},~\href{https://rmarkdown.rstudio.com/flexdashboard/}{dashboards},~\href{https://bookdown.org/yihui/rmarkdown/shiny-documents.html}{shiny
+applications},~\href{https://github.com/rstudio/rticles}{scientific
+articles},~\href{https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html}{websites},
+and more.
+
+There are two keys to your use of R Markdown for this activity:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  First, be sure that you are viewing the document in the ``Visual
+  Editor'' mode. You can use this mode by clicking the word ``Visual''
+  on the left side of the toolbar above.
+\item
+  Second, click ``Knit'' next to the yarn ball at the top of this screen
+  to preview the document as you work through it. This will allow you to
+  see your code and the input in a rendered - easy-to-read - document,
+  just as others will see this document when shared. Try knitting the
+  document now and see what happens.
+\end{enumerate}
+
+Let's get started! We are glad you are here and to begin this exciting
+(and challenging) journey together.
+
+\hypertarget{prepare}{%
+\subsection{1. PREPARE}\label{prepare}}
+
+By preparing, we refer to developing a question or purpose for the
+analysis, which you likely know from your research can be difficult!
+This part of the process also involves developing an understanding of
+the data and what you may need to analyze the data. This often involves
+looking at the data and its documentation. For now, we'll focus on just
+a few parts of this process, diving in much more deeply over the coming
+weeks.
+
+\hypertarget{packages}{%
+\subsubsection{Packages 📦}\label{packages}}
+
+R uses ``packages,'' add-ons that enhance its functionality. One package
+that we'll be using is the tidyverse. To load the tidyverse, click the
+green arrow in the right corner of the block-or ``chunk''-of code that
+follows.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2 3.3.6     v purrr   0.3.4
+## v tibble  3.1.7     v dplyr   1.0.9
+## v tidyr   1.2.0     v stringr 1.4.0
+## v readr   2.1.2     v forcats 0.5.1
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+Please do not worry if you saw a number of messages: those probably mean
+that the tidyverse loaded just fine. If you see an error, though, try to
+interpret or search via your search engine the contents of the error, or
+reach out to us for assistance.
+
+\hypertarget{loading-or-reading-in-data}{%
+\subsubsection{Loading (or reading in)
+data}\label{loading-or-reading-in-data}}
+
+Next, we'll load data-specifically, a CSV file, the kind that you can
+export from Microsoft Excel or Google Sheets - into R, using the
+\texttt{read\_csv()} function in the next chunk.
+
+Clicking the green arrow runs the code; do that next to read the
+\texttt{sci-online-classes.csv} file stored in your data folder into
+your R environment:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/sci{-}online{-}classes.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 603 Columns: 30
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr  (6): course_id, subject, semester, section, Gradebook_Item, Gender
+## dbl (23): student_id, total_points_possible, total_points_earned, percentage...
+## lgl  (1): Grade_Category
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+Nice work! You should now see a new data ``object'' named \texttt{d}
+saved in your Environment pane. Try clicking on it and see what happens.
+
+\hypertarget{viewing-or-inspecting-data}{%
+\paragraph{Viewing or inspecting
+data}\label{viewing-or-inspecting-data}}
+
+Now let's learn another way to inspect our data. Run the next chunk and
+look at the results, tabbing left or right with the arrows, or scanning
+through the rows by clicking the numbers at the bottom of the pane with
+the print-out of the data you loaded:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 603 x 30
+##    student_id course_id     total_points_poss~ total_points_ea~ percentage_earn~
+##         <dbl> <chr>                      <dbl>            <dbl>            <dbl>
+##  1      43146 FrScA-S216-02               3280             2220            0.677
+##  2      44638 OcnA-S116-01                3531             2672            0.757
+##  3      47448 FrScA-S216-01               2870             1897            0.661
+##  4      47979 OcnA-S216-01                4562             3090            0.677
+##  5      48797 PhysA-S116-01               2207             1910            0.865
+##  6      51943 FrScA-S216-03               4208             3596            0.855
+##  7      52326 AnPhA-S216-01               4325             2255            0.521
+##  8      52446 PhysA-S116-01               2086             1719            0.824
+##  9      53447 FrScA-S116-01               4655             3149            0.676
+## 10      53475 FrScA-S116-02               1710             1402            0.820
+## # ... with 593 more rows, and 25 more variables: subject <chr>, semester <chr>,
+## #   section <chr>, Gradebook_Item <chr>, Grade_Category <lgl>,
+## #   FinalGradeCEMS <dbl>, Points_Possible <dbl>, Points_Earned <dbl>,
+## #   Gender <chr>, q1 <dbl>, q2 <dbl>, q3 <dbl>, q4 <dbl>, q5 <dbl>, q6 <dbl>,
+## #   q7 <dbl>, q8 <dbl>, q9 <dbl>, q10 <dbl>, TimeSpent <dbl>,
+## #   TimeSpent_hours <dbl>, TimeSpent_std <dbl>, int <dbl>, pc <dbl>, uv <dbl>
+\end{verbatim}
+
+\hypertarget{your-turn}{%
+\paragraph{\texorpdfstring{{\textbf{Your Turn}}
+\textbf{⤵}}{Your Turn ⤵}}\label{your-turn}}
+
+What do you notice about this data set? What do you wonder? Add one-two
+thoughts following the dashes next (you can add additional dashes if you
+like!):
+
+\begin{itemize}
+\tightlist
+\item
+\item
+\end{itemize}
+
+There are other ways to inspect your data; the \texttt{glimpse()}
+function provides one such way. Run the code below to take a glimpse at
+your data.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(d)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 603
+## Columns: 30
+## $ student_id            <dbl> 43146, 44638, 47448, 47979, 48797, 51943, 52326,~
+## $ course_id             <chr> "FrScA-S216-02", "OcnA-S116-01", "FrScA-S216-01"~
+## $ total_points_possible <dbl> 3280, 3531, 2870, 4562, 2207, 4208, 4325, 2086, ~
+## $ total_points_earned   <dbl> 2220, 2672, 1897, 3090, 1910, 3596, 2255, 1719, ~
+## $ percentage_earned     <dbl> 0.6768293, 0.7567261, 0.6609756, 0.6773345, 0.86~
+## $ subject               <chr> "FrScA", "OcnA", "FrScA", "OcnA", "PhysA", "FrSc~
+## $ semester              <chr> "S216", "S116", "S216", "S216", "S116", "S216", ~
+## $ section               <chr> "02", "01", "01", "01", "01", "03", "01", "01", ~
+## $ Gradebook_Item        <chr> "POINTS EARNED & TOTAL COURSE POINTS", "ATTEMPTE~
+## $ Grade_Category        <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~
+## $ FinalGradeCEMS        <dbl> 93.45372, 81.70184, 88.48758, 81.85260, 84.00000~
+## $ Points_Possible       <dbl> 5, 10, 10, 5, 438, 5, 10, 10, 443, 5, 12, 10, 5,~
+## $ Points_Earned         <dbl> NA, 10.00, NA, 4.00, 399.00, NA, NA, 10.00, 425.~
+## $ Gender                <chr> "M", "F", "M", "M", "F", "F", "M", "F", "F", "M"~
+## $ q1                    <dbl> 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 4, 3, 5, NA,~
+## $ q2                    <dbl> 4, 4, 4, 5, 3, NA, 5, 3, 3, NA, NA, 5, 3, 3, NA,~
+## $ q3                    <dbl> 4, 3, 4, 3, 3, NA, 3, 3, 3, NA, NA, 3, 3, 5, NA,~
+## $ q4                    <dbl> 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 5, 3, 5, NA,~
+## $ q5                    <dbl> 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 5, 4, 5, NA,~
+## $ q6                    <dbl> 5, 4, 4, 5, 4, NA, 5, 4, 3, NA, NA, 5, 3, 5, NA,~
+## $ q7                    <dbl> 5, 4, 4, 4, 4, NA, 4, 3, 3, NA, NA, 5, 3, 5, NA,~
+## $ q8                    <dbl> 5, 5, 5, 5, 4, NA, 5, 3, 4, NA, NA, 4, 3, 5, NA,~
+## $ q9                    <dbl> 4, 4, 3, 5, NA, NA, 5, 3, 2, NA, NA, 5, 2, 2, NA~
+## $ q10                   <dbl> 5, 4, 5, 5, 3, NA, 5, 3, 5, NA, NA, 4, 4, 5, NA,~
+## $ TimeSpent             <dbl> 1555.1667, 1382.7001, 860.4335, 1598.6166, 1481.~
+## $ TimeSpent_hours       <dbl> 25.91944500, 23.04500167, 14.34055833, 26.643610~
+## $ TimeSpent_std         <dbl> -0.18051496, -0.30780313, -0.69325954, -0.148446~
+## $ int                   <dbl> 5.0, 4.2, 5.0, 5.0, 3.8, 4.6, 5.0, 3.0, 4.2, NA,~
+## $ pc                    <dbl> 4.50, 3.50, 4.00, 3.50, 3.50, 4.00, 3.50, 3.00, ~
+## $ uv                    <dbl> 4.333333, 4.000000, 3.666667, 5.000000, 3.500000~
+\end{verbatim}
+
+We have one more question to pose to you: What do rows and columns
+typically represent in your area of work and/or research?
+
+Generally, rows typically represent ``cases,'' the units that we
+measure, or the units on which we collect data. This is not a trick
+question! What counts as a ``case'' (and therefore what is represented
+as a row) varies by (and within) fields. There may be multiple types or
+levels of units studied in your field; listing more than one is fine!
+Also, please consider what columns - which usually represent variables -
+represent in your area of work and/or research.
+
+\hypertarget{your-turn-1}{%
+\paragraph{\texorpdfstring{{\textbf{Your Turn}}
+\textbf{⤵}}{Your Turn ⤵}}\label{your-turn-1}}
+
+What rows typically (or you think may) represent:
+
+\begin{itemize}
+\tightlist
+\item
+\end{itemize}
+
+What columns typically (or you think may) represent:
+
+\begin{itemize}
+\tightlist
+\item
+\end{itemize}
+
+Next, we'll use a few functions that are handy for preparing data in
+table form.
+
+\hypertarget{wrangle}{%
+\subsection{2. WRANGLE}\label{wrangle}}
+
+By wrangle, we refer to the process of cleaning and processing data,
+and, in cases, merging (or joining) data from multiple sources. Often,
+this part of the process is very (surprisingly) time-intensive.
+Wrangling your data into shape can itself be an important
+accomplishment! There are great tools in R to do this, especially
+through the use of the \{dplyr\} R package.
+
+\hypertarget{selecting-variables}{%
+\subsubsection{Selecting variables}\label{selecting-variables}}
+
+Let's select only a few variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{select}\NormalTok{(student\_id, total\_points\_possible, total\_points\_earned)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 603 x 3
+##    student_id total_points_possible total_points_earned
+##         <dbl>                 <dbl>               <dbl>
+##  1      43146                  3280                2220
+##  2      44638                  3531                2672
+##  3      47448                  2870                1897
+##  4      47979                  4562                3090
+##  5      48797                  2207                1910
+##  6      51943                  4208                3596
+##  7      52326                  4325                2255
+##  8      52446                  2086                1719
+##  9      53447                  4655                3149
+## 10      53475                  1710                1402
+## # ... with 593 more rows
+\end{verbatim}
+
+Notice how the number of columns (variables) is now different.
+
+Let's \emph{include one additional variable} in your select function.
+
+First, we need to figure out what variables exist in our dataset (or be
+reminded of this - it's very common in R to be continually checking and
+inspecting your data)!
+
+You can use a function named glimpse() to do this.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(d)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 603
+## Columns: 30
+## $ student_id            <dbl> 43146, 44638, 47448, 47979, 48797, 51943, 52326,~
+## $ course_id             <chr> "FrScA-S216-02", "OcnA-S116-01", "FrScA-S216-01"~
+## $ total_points_possible <dbl> 3280, 3531, 2870, 4562, 2207, 4208, 4325, 2086, ~
+## $ total_points_earned   <dbl> 2220, 2672, 1897, 3090, 1910, 3596, 2255, 1719, ~
+## $ percentage_earned     <dbl> 0.6768293, 0.7567261, 0.6609756, 0.6773345, 0.86~
+## $ subject               <chr> "FrScA", "OcnA", "FrScA", "OcnA", "PhysA", "FrSc~
+## $ semester              <chr> "S216", "S116", "S216", "S216", "S116", "S216", ~
+## $ section               <chr> "02", "01", "01", "01", "01", "03", "01", "01", ~
+## $ Gradebook_Item        <chr> "POINTS EARNED & TOTAL COURSE POINTS", "ATTEMPTE~
+## $ Grade_Category        <lgl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, ~
+## $ FinalGradeCEMS        <dbl> 93.45372, 81.70184, 88.48758, 81.85260, 84.00000~
+## $ Points_Possible       <dbl> 5, 10, 10, 5, 438, 5, 10, 10, 443, 5, 12, 10, 5,~
+## $ Points_Earned         <dbl> NA, 10.00, NA, 4.00, 399.00, NA, NA, 10.00, 425.~
+## $ Gender                <chr> "M", "F", "M", "M", "F", "F", "M", "F", "F", "M"~
+## $ q1                    <dbl> 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 4, 3, 5, NA,~
+## $ q2                    <dbl> 4, 4, 4, 5, 3, NA, 5, 3, 3, NA, NA, 5, 3, 3, NA,~
+## $ q3                    <dbl> 4, 3, 4, 3, 3, NA, 3, 3, 3, NA, NA, 3, 3, 5, NA,~
+## $ q4                    <dbl> 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 5, 3, 5, NA,~
+## $ q5                    <dbl> 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 5, 4, 5, NA,~
+## $ q6                    <dbl> 5, 4, 4, 5, 4, NA, 5, 4, 3, NA, NA, 5, 3, 5, NA,~
+## $ q7                    <dbl> 5, 4, 4, 4, 4, NA, 4, 3, 3, NA, NA, 5, 3, 5, NA,~
+## $ q8                    <dbl> 5, 5, 5, 5, 4, NA, 5, 3, 4, NA, NA, 4, 3, 5, NA,~
+## $ q9                    <dbl> 4, 4, 3, 5, NA, NA, 5, 3, 2, NA, NA, 5, 2, 2, NA~
+## $ q10                   <dbl> 5, 4, 5, 5, 3, NA, 5, 3, 5, NA, NA, 4, 4, 5, NA,~
+## $ TimeSpent             <dbl> 1555.1667, 1382.7001, 860.4335, 1598.6166, 1481.~
+## $ TimeSpent_hours       <dbl> 25.91944500, 23.04500167, 14.34055833, 26.643610~
+## $ TimeSpent_std         <dbl> -0.18051496, -0.30780313, -0.69325954, -0.148446~
+## $ int                   <dbl> 5.0, 4.2, 5.0, 5.0, 3.8, 4.6, 5.0, 3.0, 4.2, NA,~
+## $ pc                    <dbl> 4.50, 3.50, 4.00, 3.50, 3.50, 4.00, 3.50, 3.00, ~
+## $ uv                    <dbl> 4.333333, 4.000000, 3.666667, 5.000000, 3.500000~
+\end{verbatim}
+
+\hypertarget{your-turn-2}{%
+\paragraph{\texorpdfstring{{\textbf{Your Turn}}
+\textbf{⤵}}{Your Turn ⤵}}\label{your-turn-2}}
+
+In the code chunk below, add a new variable to the code below, being
+careful to type the new variable name as it appears in the data. We've
+added some code to get you started. Consider how the names of the other
+variables are separated as you think about how to add an additional
+variable to this code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{select}\NormalTok{(student\_id, total\_points\_possible, total\_points\_earned)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 603 x 3
+##    student_id total_points_possible total_points_earned
+##         <dbl>                 <dbl>               <dbl>
+##  1      43146                  3280                2220
+##  2      44638                  3531                2672
+##  3      47448                  2870                1897
+##  4      47979                  4562                3090
+##  5      48797                  2207                1910
+##  6      51943                  4208                3596
+##  7      52326                  4325                2255
+##  8      52446                  2086                1719
+##  9      53447                  4655                3149
+## 10      53475                  1710                1402
+## # ... with 593 more rows
+\end{verbatim}
+
+Once added, the output should be different than in the code above -
+there should now be an additional variable included in the print-out.
+
+\hypertarget{filtering-variables}{%
+\subsubsection{Filtering variables}\label{filtering-variables}}
+
+Next, let's explore filtering variables. Check out and run the next
+chunk of code, imagining that we wish to filter our data to view only
+the rows associated with students who earned a final grade (as a
+percentage) of 70 - 70\% - or higher.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(FinalGradeCEMS }\SpecialCharTok{\textgreater{}} \DecValTok{70}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 438 x 30
+##    student_id course_id     total_points_poss~ total_points_ea~ percentage_earn~
+##         <dbl> <chr>                      <dbl>            <dbl>            <dbl>
+##  1      43146 FrScA-S216-02               3280             2220            0.677
+##  2      44638 OcnA-S116-01                3531             2672            0.757
+##  3      47448 FrScA-S216-01               2870             1897            0.661
+##  4      47979 OcnA-S216-01                4562             3090            0.677
+##  5      48797 PhysA-S116-01               2207             1910            0.865
+##  6      52326 AnPhA-S216-01               4325             2255            0.521
+##  7      52446 PhysA-S116-01               2086             1719            0.824
+##  8      53447 FrScA-S116-01               4655             3149            0.676
+##  9      53475 FrScA-S216-01               1209              977            0.808
+## 10      54066 OcnA-S116-01                4641             3429            0.739
+## # ... with 428 more rows, and 25 more variables: subject <chr>, semester <chr>,
+## #   section <chr>, Gradebook_Item <chr>, Grade_Category <lgl>,
+## #   FinalGradeCEMS <dbl>, Points_Possible <dbl>, Points_Earned <dbl>,
+## #   Gender <chr>, q1 <dbl>, q2 <dbl>, q3 <dbl>, q4 <dbl>, q5 <dbl>, q6 <dbl>,
+## #   q7 <dbl>, q8 <dbl>, q9 <dbl>, q10 <dbl>, TimeSpent <dbl>,
+## #   TimeSpent_hours <dbl>, TimeSpent_std <dbl>, int <dbl>, pc <dbl>, uv <dbl>
+\end{verbatim}
+
+\hypertarget{your-turn-3}{%
+\subparagraph{\texorpdfstring{{\textbf{Your Turn}}
+\textbf{⤵}}{Your Turn ⤵}}\label{your-turn-3}}
+
+In the next code chunk, change the cut-off from 70\% to some other value
+- larger or smaller (maybe much larger or smaller - feel free to play
+around with the code a bit!).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{filter}\NormalTok{(FinalGradeCEMS }\SpecialCharTok{\textgreater{}} \DecValTok{70}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 438 x 30
+##    student_id course_id     total_points_poss~ total_points_ea~ percentage_earn~
+##         <dbl> <chr>                      <dbl>            <dbl>            <dbl>
+##  1      43146 FrScA-S216-02               3280             2220            0.677
+##  2      44638 OcnA-S116-01                3531             2672            0.757
+##  3      47448 FrScA-S216-01               2870             1897            0.661
+##  4      47979 OcnA-S216-01                4562             3090            0.677
+##  5      48797 PhysA-S116-01               2207             1910            0.865
+##  6      52326 AnPhA-S216-01               4325             2255            0.521
+##  7      52446 PhysA-S116-01               2086             1719            0.824
+##  8      53447 FrScA-S116-01               4655             3149            0.676
+##  9      53475 FrScA-S216-01               1209              977            0.808
+## 10      54066 OcnA-S116-01                4641             3429            0.739
+## # ... with 428 more rows, and 25 more variables: subject <chr>, semester <chr>,
+## #   section <chr>, Gradebook_Item <chr>, Grade_Category <lgl>,
+## #   FinalGradeCEMS <dbl>, Points_Possible <dbl>, Points_Earned <dbl>,
+## #   Gender <chr>, q1 <dbl>, q2 <dbl>, q3 <dbl>, q4 <dbl>, q5 <dbl>, q6 <dbl>,
+## #   q7 <dbl>, q8 <dbl>, q9 <dbl>, q10 <dbl>, TimeSpent <dbl>,
+## #   TimeSpent_hours <dbl>, TimeSpent_std <dbl>, int <dbl>, pc <dbl>, uv <dbl>
+\end{verbatim}
+
+What happens when you change the cut-off from 70 to something else? Add
+a thought (or more):
+
+\begin{itemize}
+\tightlist
+\item
+\end{itemize}
+
+\hypertarget{arrange}{%
+\subsubsection{Arrange}\label{arrange}}
+
+The last function we'll use for preparing tables is arrange.
+
+We'll combine this arrange() function with a function we used already -
+select(). We do this so we can view only the student ID and their final
+grade.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{select}\NormalTok{(student\_id, FinalGradeCEMS) }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{arrange}\NormalTok{(FinalGradeCEMS)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 603 x 2
+##    student_id FinalGradeCEMS
+##         <dbl>          <dbl>
+##  1      90995          0    
+##  2      92606          0.535
+##  3      95684          0.903
+##  4      90996          1.80 
+##  5      94876          2.93 
+##  6      92633          3.01 
+##  7      85390          3.06 
+##  8      94630          3.43 
+##  9      90995          5.04 
+## 10      96677          5.2  
+## # ... with 593 more rows
+\end{verbatim}
+
+Note that arrange works by sorting values in ascending order (from
+lowest to highest); you can change this by using the desc() function
+with arrange, like the following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{select}\NormalTok{(student\_id, FinalGradeCEMS) }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(FinalGradeCEMS))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 603 x 2
+##    student_id FinalGradeCEMS
+##         <dbl>          <dbl>
+##  1      85650          100  
+##  2      91067           99.8
+##  3      66740           99.3
+##  4      86792           99.1
+##  5      78153           99.0
+##  6      66689           98.6
+##  7      88261           98.6
+##  8      92740           98.6
+##  9      92726           98.2
+## 10      92741           98.2
+## # ... with 593 more rows
+\end{verbatim}
+
+\hypertarget{your-turn-4}{%
+\paragraph{\texorpdfstring{{\textbf{Your Turn}}
+\textbf{⤵}}{Your Turn ⤵}}\label{your-turn-4}}
+
+In the code chunk below, replace FinalGradeCEMS that is used with both
+the select() and arrange() functions with a different variable in the
+data set. Consider returning to the code chunk above in which you
+glimpsed at the names of all of the variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{select}\NormalTok{(student\_id, FinalGradeCEMS) }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(FinalGradeCEMS))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 603 x 2
+##    student_id FinalGradeCEMS
+##         <dbl>          <dbl>
+##  1      85650          100  
+##  2      91067           99.8
+##  3      66740           99.3
+##  4      86792           99.1
+##  5      78153           99.0
+##  6      66689           98.6
+##  7      88261           98.6
+##  8      92740           98.6
+##  9      92726           98.2
+## 10      92741           98.2
+## # ... with 593 more rows
+\end{verbatim}
+
+\hypertarget{reach-1}{%
+\subsubsection{Reach 1 🎉}\label{reach-1}}
+
+Can you compose a series of functions that include the select(),
+filter(), and arrange functions? Recall that you can ``pipe'' the output
+from one function to the next as when we used select() and arrange()
+together in the code chunk above.
+
+\emph{This reach is not required/necessary to complete; it's just for
+those who wish to do a bit more with these functions at this time (we'll
+do more in class, too!)}
+
+\hypertarget{explore}{%
+\subsection{3. EXPLORE}\label{explore}}
+
+Exploratory data analysis, or exploring your data, involves processes of
+\emph{describing} your data (such as by calculating the means and
+standard deviations of numeric variables, or counting the frequency of
+categorical variables) and, often, visualizing your data prior. In this
+section, we'll create a few plots to explore our data.
+
+\hypertarget{histogram}{%
+\subsubsection{Histogram}\label{histogram}}
+
+The code below creates a histogram, or a distribution of the values, in
+this case for students' final grades.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(d, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ FinalGradeCEMS)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 30 rows containing non-finite values (stat_bin).
+\end{verbatim}
+
+\includegraphics{laser-orientation-badge_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+You can change the color of the histogram bars by specifying a color as
+follows:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(d, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ FinalGradeCEMS)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill =} \StringTok{"blue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 30 rows containing non-finite values (stat_bin).
+\end{verbatim}
+
+\includegraphics{laser-orientation-badge_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+\hypertarget{changing-colors}{%
+\subsubsection{Changing colors}\label{changing-colors}}
+
+\hypertarget{your-turn-5}{%
+\paragraph{\texorpdfstring{{\textbf{Your Turn}}
+\textbf{⤵}}{Your Turn ⤵}}\label{your-turn-5}}
+
+In the code chunk below, change the color to one of your choosing;
+consider this list of valid color names here:
+\url{http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(d, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ FinalGradeCEMS)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill =} \StringTok{"blue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 30 rows containing non-finite values (stat_bin).
+\end{verbatim}
+
+\includegraphics{laser-orientation-badge_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+Finally, we'll make one more change; visualize the distribution of
+another variable in the data - one other than FinalGradeCEMS. You can do
+so by swapping out the name for another variable with FinalGradeCEMS.
+Also, change the color to one other than blue.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(d, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ FinalGradeCEMS)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{fill =} \StringTok{"blue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 30 rows containing non-finite values (stat_bin).
+\end{verbatim}
+
+\includegraphics{laser-orientation-badge_files/figure-latex/unnamed-chunk-18-1.pdf}
+
+\hypertarget{reach-2}{%
+\subsubsection{Reach 2 🎉}\label{reach-2}}
+
+Completed the above? Nice job! Try for a ``reach'' by creating a scatter
+plot for the relationship between two variables. You will need to pass
+the names of two variables to the code below for what is now simply XXX
+(a placeholder).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(d, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ XXX, }\AttributeTok{y =}\NormalTok{ XXX)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Error in FUN(X[[i]], ...): object 'XXX' not found
+\end{verbatim}
+
+\includegraphics{laser-orientation-badge_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\hypertarget{model}{%
+\subsection{4. MODEL}\label{model}}
+
+``Model'' is one of those terms that has many different meanings. For
+our purpose, we refer to the process of simplifying and summarizing our
+data. Thus, models can take many forms; calculating means represents a
+legitimate form of modeling data, as does estimating more complex
+models, including linear regressions, and models and algorithms
+associated with machine learning tasks. For now, we'll run a linear
+regression to predict students' final grades.
+
+Below, we predict students' final grades (\texttt{FinaGradeCEMS}, which
+is on a 0-100 point scale) on the basis of the time they spent on the
+course (measured through their learning management system in minutes,
+\texttt{TimeSpent}, and the subject (one of five) of their specific
+course.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m1 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(FinalGradeCEMS }\SpecialCharTok{\textasciitilde{}}\NormalTok{ TimeSpent }\SpecialCharTok{+}\NormalTok{ subject, }\AttributeTok{data =}\NormalTok{ d)}
+\FunctionTok{summary}\NormalTok{(m1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = FinalGradeCEMS ~ TimeSpent + subject, data = d)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -70.378  -8.836   4.816  12.855  36.047 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  57.3931739  2.3382193  24.546  < 2e-16 ***
+## TimeSpent     0.0071098  0.0006516  10.912  < 2e-16 ***
+## subjectBioA  -1.5596482  3.6053075  -0.433    0.665    
+## subjectFrScA 11.7306546  2.2143847   5.297 1.68e-07 ***
+## subjectOcnA   1.0974545  2.5771474   0.426    0.670    
+## subjectPhysA 16.0357213  3.0712923   5.221 2.50e-07 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 19.8 on 567 degrees of freedom
+##   (30 observations deleted due to missingness)
+## Multiple R-squared:  0.213,  Adjusted R-squared:  0.2061 
+## F-statistic: 30.69 on 5 and 567 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\hypertarget{your-turn-6}{%
+\paragraph{\texorpdfstring{{\textbf{Your Turn}}
+\textbf{⤵}}{Your Turn ⤵}}\label{your-turn-6}}
+
+Notice how above the variables are separated by a + symbol. Below, add
+\emph{another} - a third - variable to the regression model.
+Specifically, add a variable students' initial, self-reported interest
+in science, \texttt{int} - and any other variable(s) you like! What do
+you notice about the results? We're going to dive into this \emph{much}
+more: if you have many questions now, you're in the right spot!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m2 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(FinalGradeCEMS }\SpecialCharTok{\textasciitilde{}}\NormalTok{ TimeSpent }\SpecialCharTok{+}\NormalTok{ subject, }\AttributeTok{data =}\NormalTok{ d)}
+\FunctionTok{summary}\NormalTok{(m2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = FinalGradeCEMS ~ TimeSpent + subject, data = d)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -70.378  -8.836   4.816  12.855  36.047 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  57.3931739  2.3382193  24.546  < 2e-16 ***
+## TimeSpent     0.0071098  0.0006516  10.912  < 2e-16 ***
+## subjectBioA  -1.5596482  3.6053075  -0.433    0.665    
+## subjectFrScA 11.7306546  2.2143847   5.297 1.68e-07 ***
+## subjectOcnA   1.0974545  2.5771474   0.426    0.670    
+## subjectPhysA 16.0357213  3.0712923   5.221 2.50e-07 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 19.8 on 567 degrees of freedom
+##   (30 observations deleted due to missingness)
+## Multiple R-squared:  0.213,  Adjusted R-squared:  0.2061 
+## F-statistic: 30.69 on 5 and 567 DF,  p-value: < 2.2e-16
+\end{verbatim}
+
+\hypertarget{communicate}{%
+\subsection{5. COMMUNICATE}\label{communicate}}
+
+Great job! Once you've finished your work, Upon doing so, you should see
+a new \texttt{laser-orientation-badge.html}.
+
+Congratulations, you've completed your Models \& Inference Badge!
+Complete the following steps to submit your work for review by
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Change the name of the \texttt{author:} in the
+  \href{https://monashdatafluency.github.io/r-rep-res/yaml-header.html}{YAML
+  header} at the very top of this document to your name. As noted in
+  \href{https://monashdatafluency.github.io/r-rep-res/index.html}{Reproducible
+  Research in R}, The YAML header controls the style and feel for
+  knitted document but doesn't actually display in the final output.
+\item
+  Click the yarn icon above to ``knit'' your data product to a
+  \href{https://bookdown.org/yihui/rmarkdown/html-document.html}{HTML}
+  file that will be saved in your R Project folder.
+\item
+  Commit your changes in GitHub Desktop and push them to your online
+  GitHub repository.
+\item
+  Publish your HTML page the web using one of the following
+  \href{https://rpubs.com/cathydatascience/518692}{publishing methods}:
+
+  \begin{itemize}
+  \item
+    Publish on \href{https://rpubs.com}{RPubs} by clicking the
+    ``Publish'' button located in the Viewer Pane when you knit your
+    document. Note, you will need to quickly create a RPubs account.
+  \item
+    Publishing on GitHub using either
+    \href{https://pages.github.com}{GitHub Pages} or the
+    \href{http://htmlpreview.github.io}{HTML previewer}.
+  \end{itemize}
+\item
+  Post a new discussion on GitHub to our
+  \href{https://github.com/orgs/laser-institute/teams/foundations/discussions/2}{Foundations
+  Badges forum}. In your post, include a link to your published web page
+  and a short reflection highlighting one thing you learned from this
+  lab and one thing you'd like to explore further.
+\end{enumerate}
+
+\end{document}
